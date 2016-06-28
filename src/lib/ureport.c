@@ -17,6 +17,7 @@
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 #include <json.h>
+#include <json-c/bits.h>
 
 #include <satyr/abrt.h>
 #include <satyr/report.h>

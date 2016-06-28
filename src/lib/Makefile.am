@@ -90,9 +90,10 @@ libreport_la_CPPFLAGS = \
     $(GOBJECT_CFLAGS) \
     $(AUGEAS_CFLAGS) \
     $(SATYR_CFLAGS) \
+    $(LIBTAR_CFLAGS) \
     -D_GNU_SOURCE
 libreport_la_LDFLAGS = \
-    -ltar \
+    $(LIBTAR_LIBS) \
     -version-info 0:1:0
 libreport_la_LIBADD = \
     $(GLIB_LIBS) \

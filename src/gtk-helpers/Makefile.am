@@ -45,7 +45,7 @@ libreport_gtk_la_LIBADD = \
 
 noinst_PROGRAMS = test-desktop-utils
 test_desktop_utils_CFLAGS = -I$(srcdir) $(GIO_CFLAGS)
-test_desktop_utils_LDADD = libreport-gtk.la
+test_desktop_utils_LDADD = $(GIO_LIBS) libreport-gtk.la
 
 EXTRA_DIST = libreport-gtk.pc.in
 

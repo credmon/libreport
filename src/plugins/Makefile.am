@@ -172,6 +172,7 @@ reporter_mantisbt_CPPFLAGS = \
     -D_GNU_SOURCE
 reporter_mantisbt_LDADD = \
     $(GLIB_LIBS) \
+    $(LIBXML_LIBS) \
     ../lib/libreport-web.la \
     ../lib/libreport.la
 endif
@@ -195,10 +196,12 @@ reporter_rhtsupport_CPPFLAGS = \
     $(GLIB_CFLAGS) \
     $(LIBREPORT_CFLAGS) \
     $(LIBXML_CFLAGS) \
+    $(LIBTAR_CFLAGS) \
     -D_GNU_SOURCE
 reporter_rhtsupport_LDADD = \
     $(GLIB_LIBS) \
     $(LIBXML_LIBS) \
+    $(LIBTAR_LIBS) \
     ../lib/libreport-web.la \
     ../lib/libreport.la
 
@@ -239,6 +242,8 @@ reporter_kerneloops_CPPFLAGS = \
     $(LIBREPORT_CFLAGS) \
     -D_GNU_SOURCE
 reporter_kerneloops_LDADD = \
+    $(GLIB_LIBS) \
+    $(CURL_LIBS) \
     ../lib/libreport-web.la \
     ../lib/libreport.la
 
@@ -259,6 +264,7 @@ reporter_mailx_CPPFLAGS = \
     $(LIBREPORT_CFLAGS) \
     -D_GNU_SOURCE
 reporter_mailx_LDADD = \
+    $(GLIB_LIBS) \
     ../lib/libreport.la
 
 reporter_print_SOURCES = \
@@ -276,6 +282,7 @@ reporter_print_CPPFLAGS = \
     $(LIBREPORT_CFLAGS) \
     -D_GNU_SOURCE
 reporter_print_LDADD = \
+    $(GLIB_LIBS) \
     ../lib/libreport.la
 
 if BUILD_BUGZILLA
@@ -310,6 +317,7 @@ reporter_ureport_CPPFLAGS = \
     -DPLUGINS_CONF_DIR=\"$(REPORT_PLUGINS_CONF_DIR)\" \
     -D_GNU_SOURCE
 reporter_ureport_LDADD = \
+    $(GLIB_LIBS) \
     $(JSON_C_LIBS) \
     ../lib/libreport.la \
     ../lib/libreport-web.la

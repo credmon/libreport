@@ -283,8 +283,12 @@ AC_SUBST([JSON_C_PACKAGE])
 
 PKG_PROG_PKG_CONFIG
 
-AC_CHECK_HEADER([libtar.h], [],
-   [AC_MSG_ERROR([libtar.h is needed to build libreport])])
+AC_CHECK_HEADER([libtar.h],
+                [AC_CHECK_LIB([tar],[tar_fd],
+                              [LIBTAR_LIBS=-ltar],[LIBTAR_LIBS=],[])],
+                [AC_MSG_ERROR([libtar.h is needed to build libreport])])
+AC_SUBST(LIBTAR_CFLAGS)
+AC_SUBST(LIBTAR_LIBS)
 
 AC_CHECK_HEADERS([locale.h])
 
